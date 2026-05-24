@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADEboII Label Record | African Sound. Global Movement.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matteBlack: '#0D0D0D',
+                        deepGold: '#C9A227',
+                        burntOrange: '#D96C06',
+                        ivoryWhite: '#F5F2EB',
+                        forestGreen: '#123524',
+                        cardBg: '#171717'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0D0D0D;
+            color: #F5F2EB;
+            font-family: 'Inter', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        /* Custom scrollbar for premium dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0D0D0D; }
+        ::-webkit-scrollbar-thumb { background: #C9A227; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D96C06; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-matteBlack/90 backdrop-blur-md border-b border-white/10 px-4 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" onclick="showPage('home')" class="heading-font text-2xl font-bold tracking-widest text-ivoryWhite">
+                ADEboII<span class="text-burntOrange">.</span>
+            </a>
+
+            <!-- Desktop Menu Navigation -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wider uppercase">
+                <button onclick="showPage('home')" class="nav-link text-deepGold border-b-2 border-deepGold pb-1 transition-all duration-200">Home</button>
+                <button onclick="showPage('artists')" class="nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200">Artists</button>
+                <button onclick="showPage('music')" class="nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200">Music</button>
+                <button onclick="showPage('videos')" class="nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200">Videos</button>
+                <button onclick="showPage('about')" class="nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200">About</button>
+                <button onclick="showPage('contact')" class="nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200">Contact</button>
+            </nav>
+
+            <!-- CTA Mobile/Desktop Toggle -->
+            <div class="flex items-center space-x-4">
+                <button onclick="showPage('contact')" class="hidden sm:inline-block bg-gradient-to-r from-burntOrange to-deepGold text-matteBlack font-bold px-5 py-2 rounded text-xs tracking-wider uppercase hover:opacity-90 transition-all">
+                    Book Artists
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-ivoryWhite text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropout Menu -->
+        <div id="mobileMenu" class="hidden md:hidden absolute left-0 right-0 top-full bg-matteBlack border-b border-white/10 flex flex-col p-6 space-y-4 text-center heading-font tracking-wide text-lg shadow-2xl">
+            <button onclick="showPage('home')" class="mobile-nav-link text-deepGold py-2">Home</button>
+            <button onclick="showPage('artists')" class="mobile-nav-link text-gray-300 py-2">Artists</button>
+            <button onclick="showPage('music')" class="mobile-nav-link text-gray-300 py-2">Music</button>
+            <button onclick="showPage('videos')" class="mobile-nav-link text-gray-300 py-2">Videos</button>
+            <button onclick="showPage('about')" class="mobile-nav-link text-gray-300 py-2">About</button>
+            <button onclick="showPage('contact')" class="mobile-nav-link text-gray-300 py-2">Contact</button>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="flex-grow">
+
+        <!-- 1. HOMEPAGE -->
+        <section id="homePage" class="page-section active-section animate-fade-in">
+            <!-- Hero Banner -->
+            <div class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center px-4" style="background-image: linear-gradient(rgba(13,13,13,0.4), #0D0D0D), url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1600');">
+                <div class="text-center max-w-4xl space-y-6">
+                    <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 bg-forestGreen text-ivoryWhite rounded-full">Where Culture Becomes Legacy</span>
+                    <h1 class="heading-font text-5xl md:text-8xl font-bold tracking-tight text-white leading-none">
+                        African Sound.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-deepGold to-burntOrange">Global Movement.</span>
+                    </h1>
+                    <p class="text-gray-300 max-w-xl mx-auto text-sm md:text-base font-light">
+                        Blending modern Afrobeats, raw street culture, and cinematic storytelling into a premium global entertainment ecosystem.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <button onclick="showPage('music')" class="w-full sm:w-auto px-8 py-3 bg-burntOrange hover:bg-burntOrange/90 text-white font-semibold rounded tracking-wider uppercase transition-all">Listen Now</button>
+                        <button onclick="showPage('artists')" class="w-full sm:w-auto px-8 py-3 border border-deepGold text-deepGold hover:bg-deepGold hover:text-matteBlack font-semibold rounded tracking-wider uppercase transition-all">Explore Artists</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Release Section -->
+            <div class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+                <h2 class="heading-font text-3xl font-bold mb-10 text-center md:text-left"><span class="text-burntOrange">//</span> Featured Release</h2>
+                <div class="bg-cardBg rounded-xl p-6 md:p-10 border border-white/5 flex flex-col lg:flex-row gap-8 items-center">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=600" alt="Album Cover" class="w-full sm:w-80 h-80 object-cover rounded-lg shadow-2xl border border-white/10">
+                    <div class="flex-1 space-y-4 text-center lg:text-left">
+                        <span class="text-xs font-semibold text-deepGold tracking-widest uppercase">Latest Worldwide Single</span>
+                        <h3 class="heading-font text-4xl font-bold text-white">Kulture Vibe (EP)</h3>
+                        <p class="text-burntOrange font-semibold text-lg">By Starboy Tunde x Amara</p>
+                        <p class="text-gray-400 text-sm max-w-2xl">
+                            The ultimate sonic crossover event of the season. Merging traditional Amapiano logs with gritty West African street lyricism. Stream across all major audio distribution networks.
+                        </p>
+                        <!-- Dynamic Smart Links Placeholder -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
+                            <a href="#" class="bg-matteBlack hover:bg-black p-3 rounded flex items-center justify-center space-x-2 text-xs border border-white/5 transition-all"><i class="fa-brands fa-spotify text-green-500"></i> <span>Spotify</span></a>
+                            <a href="#" class="bg-matteBlack hover:bg-black p-3 rounded flex items-center justify-center space-x-2 text-xs border border-white/5 transition-all"><i class="fa-brands fa-apple text-gray-400"></i> <span>Apple Music</span></a>
+                            <a href="#" class="bg-matteBlack hover:bg-black p-3 rounded flex items-center justify-center space-x-2 text-xs border border-white/5 transition-all"><i class="fa-solid fa-play text-orange-500"></i> <span>Boomplay</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Artists Segment -->
+            <div class="bg-black/40 py-16">
+                <div class="max-w-7xl mx-auto px-4 lg:px-8">
+                    <div class="flex justify-between items-end mb-10">
+                        <h2 class="heading-font text-3xl font-bold"><span class="text-burntOrange">//</span> Roster Vanguard</h2>
+                        <button onclick="showPage('artists')" class="text-xs tracking-widest uppercase font-semibold text-deepGold hover:underline">See All Roster →</button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="relative group overflow-hidden rounded-lg bg-cardBg aspect-[3/4]">
+                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Artist Profile">
+                            <div class="absolute inset-0 bg-gradient-to-t from-matteBlack via-matteBlack/40 to-transparent flex flex-col justify-end p-6">
+                                <h4 class="heading-font text-2xl font-bold text-white">Starboy Tunde</h4>
+                                <p class="text-xs text-deepGold tracking-wide">Afro-Fusion / Street Pop</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-lg bg-cardBg aspect-[3/4]">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Artist Profile">
+                            <div class="absolute inset-0 bg-gradient-to-t from-matteBlack via-matteBlack/40 to-transparent flex flex-col justify-end p-6">
+                                <h4 class="heading-font text-2xl font-bold text-white">Amara</h4>
+                                <p class="text-xs text-deepGold tracking-wide">Alternative Afro R&B</p>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-lg bg-cardBg aspect-[3/4]">
+                            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Artist Profile">
+                            <div class="absolute inset-0 bg-gradient-to-t from-matteBlack via-matteBlack/40 to-transparent flex flex-col justify-end p-6">
+                                <h4 class="heading-font text-2xl font-bold text-white">Kelvin Beats</h4>
+                                <p class="text-xs text-deepGold tracking-wide">Producer / Highlife</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ARTISTS PAGE -->
+        <section id="artistsPage" class="page-section hidden max-w-7xl mx-auto px-4 lg:px-8 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h1 class="heading-font text-4xl md:text-5xl font-bold">The Creative Pulse</h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-burntOrange to-deepGold mx-auto"></div>
+                <p class="text-gray-400 text-sm">Architects of modern rhythm crafting globally recognized multi-platinum African musical heritage.</p>
+            </div>
+
+            <!-- Deep Extended Roster Setup -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Artist Extended Profile Card 1 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 flex flex-col sm:flex-row">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=500" class="w-full sm:w-48 h-64 sm:h-auto object-cover" alt="Starboy Tunde">
+                    <div class="p-6 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs text-burntOrange uppercase font-mono tracking-widest">Main Roster</span>
+                            <h3 class="heading-font text-3xl font-bold text-white mt-1">Starboy Tunde</h3>
+                            <p class="text-xs text-deepGold mb-3">Lagos, Nigeria — Afro-Fusion</p>
+                            <p class="text-gray-400 text-xs leading-relaxed">Breaking regional barriers with high-energy rhythms, authentic street storytelling, and an unmistakable global tone signature.</p>
+                        </div>
+                        <div class="flex space-x-3 text-sm text-gray-400">
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-spotify"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Artist Extended Profile Card 2 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 flex flex-col sm:flex-row">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500" class="w-full sm:w-48 h-64 sm:h-auto object-cover" alt="Amara">
+                    <div class="p-6 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-xs text-burntOrange uppercase font-mono tracking-widest">Main Roster</span>
+                            <h3 class="heading-font text-3xl font-bold text-white mt-1">Amara</h3>
+                            <p class="text-xs text-deepGold mb-3">Accra, Ghana — Alternative Afro R&B</p>
+                            <p class="text-gray-400 text-xs leading-relaxed">Fusing soulful alternative rhythms with traditional Highlife cadences to redefine contemporary African RnB soundscapes.</p>
+                        </div>
+                        <div class="flex space-x-3 text-sm text-gray-400">
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="hover:text-deepGold"><i class="fa-brands fa-apple"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MUSIC PAGE -->
+        <section id="musicPage" class="page-section hidden max-w-7xl mx-auto px-4 lg:px-8 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h1 class="heading-font text-4xl md:text-5xl font-bold">Sound Repository</h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-burntOrange to-deepGold mx-auto"></div>
+                <p class="text-gray-400 text-sm">Albums, singles, and executive catalog items delivered globally by ADEboII artists.</p>
+            </div>
+
+            <!-- Catalogue Grid Selection -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Music Card Item 1 -->
+                <div class="bg-cardBg rounded-xl p-4 border border-white/5 space-y-4">
+                    <div class="relative group rounded-lg overflow-hidden aspect-square">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Cover art">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
+                            <button class="bg-deepGold text-matteBlack w-12 h-12 rounded-full flex items-center justify-center text-lg shadow-lg"><i class="fa-solid fa-play ml-1"></i></button>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-burntOrange tracking-widest font-mono uppercase">EP Album</span>
+                        <h4 class="heading-font font-bold text-white text-lg truncate">Kulture Vibe</h4>
+                        <p class="text-xs text-gray-400">Starboy Tunde x Amara</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-white/5 text-xs text-gray-400">
+                        <span>2026 Release</span>
+                        <div class="flex space-x-2">
+                            <a href="#" class="hover:text-white"><i class="fa-brands fa-spotify"></i></a>
+                            <a href="#" class="hover:text-white"><i class="fa-brands fa-apple"></i></a>
+                        </div>
+                    </div>
+                </div>
+<!-- Music Card Item 2 -->
+                <div class="bg-cardBg rounded-xl p-4 border border-white/5 space-y-4">
+                    <div class="relative group rounded-lg overflow-hidden aspect-square">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Cover art">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
+                            <button class="bg-deepGold text-matteBlack w-12 h-12 rounded-full flex items-center justify-center text-lg shadow-lg"><i class="fa-solid fa-play ml-1"></i></button>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-burntOrange tracking-widest font-mono uppercase">Single track</span>
+                        <h4 class="heading-font font-bold text-white text-lg truncate">Ghetto Gospel Vibes</h4>
+                        <p class="text-xs text-gray-400">Starboy Tunde</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-white/5 text-xs text-gray-400">
+                        <span>2025 Release</span>
+                        <div class="flex space-x-2">
+                            <a href="#" class="hover:text-white"><i class="fa-brands fa-spotify"></i></a>
+                            <a href="#" class="hover:text-white"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. VIDEOS PAGE -->
+        <section id="videosPage" class="page-section hidden max-w-7xl mx-auto px-4 lg:px-8 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h1 class="heading-font text-4xl md:text-5xl font-bold">Visual Cinema</h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-burntOrange to-deepGold mx-auto"></div>
+                <p class="text-gray-400 text-sm">Official music videos, high-concept visual teasers, and exclusive documentary records.</p>
+            </div>
+
+            <!-- Video Grid Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video Item 1 -->
+                <div class="space-y-3">
+                    <div class="relative rounded-xl overflow-hidden bg-cardBg aspect-video border border-white/5 shadow-xl">
+                        <!-- Simulated YouTube Embed Embed/Placeholder Overlay -->
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="absolute inset-0 bg-black/50 flex flex-col justify-between p-4 sm:p-6 transition-all hover:bg-black/40">
+                            <span class="self-start text-[10px] uppercase font-mono tracking-widest bg-burntOrange px-2 py-1 rounded text-white">Official Music Video</span>
+                            <a href="https://www.youtube.com" target="_blank" class="self-center w-16 h-16 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white text-2xl transition-all shadow-2xl">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </a>
+                            <span class="text-xs text-gray-300">Run Time: 3:45</span>
+                        </div>
+                    </div>
+                    <h3 class="heading-font text-xl font-bold text-white mt-2">Starboy Tunde — Kulture Vibe (Official Video)</h3>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="space-y-3">
+                    <div class="relative rounded-xl overflow-hidden bg-cardBg aspect-video border border-white/5 shadow-xl">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="absolute inset-0 bg-black/50 flex flex-col justify-between p-4 sm:p-6 transition-all hover:bg-black/40">
+                            <span class="self-start text-[10px] uppercase font-mono tracking-widest bg-forestGreen px-2 py-1 rounded text-white">Behind The Scenes</span>
+                            <a href="https://www.youtube.com" target="_blank" class="self-center w-16 h-16 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white text-2xl transition-all shadow-2xl">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </a>
+                            <span class="text-xs text-gray-300">Run Time: 12:14</span>
+                        </div>
+                    </div>
+                    <h3 class="heading-font text-xl font-bold text-white mt-2">Making The Sound: Amara Studio Documentary</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ABOUT PAGE -->
+        <section id="aboutPage" class="page-section hidden max-w-7xl mx-auto px-4 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-deepGold uppercase tracking-widest block font-mono">// Our Blueprint Architecture</span>
+                    <h1 class="heading-font text-4xl md:text-6xl font-bold text-white leading-tight">Built From Culture. Made For The World.</h1>
+                    <div class="w-16 h-1 bg-burntOrange"></div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        ADEboII Label Record is structured explicitly as a premium modern sound company bridging traditional West African creative foundations with global distribution platforms. We develop high-concept sonic branding, multi-format media footprints, and premium artist talent portfolios.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-2 border-deepGold pl-4">
+                            <h4 class="heading-font font-bold text-white text-lg">Our Mission</h4>
+                            <p class="text-xs text-gray-400 mt-1">To systematically scale premium raw African talents into independent, legacy-driven global music ecosystems.</p>
+                        </div>
+                        <div class="border-l-2 border-burntOrange pl-4">
+                            <h4 class="heading-font font-bold text-white text-lg">Our Vision</h4>
+                            <p class="text-xs text-gray-400 mt-1">Standardizing modern sound engineering frameworks while keeping cultural identity uncompromised.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=800" class="rounded-xl shadow-2xl border border-white/5 object-cover w-full h-[450px]" alt="Studio setup">
+                    <div class="absolute -bottom-6 -left-6 bg-gradient-to-br from-burntOrange to-deepGold p-6 rounded-lg text-matteBlack font-bold shadow-xl hidden sm:block">
+                        <p class="heading-font text-3xl font-extrabold">100%</p>
+                        <p class="text-xs uppercase tracking-wider font-mono">African Roots</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT / BOOKING PAGE -->
+        <section id="contactPage" class="page-section hidden max-w-7xl mx-auto px-4 lg:px-8 py-12">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <h1 class="heading-font text-4xl md:text-5xl font-bold">Secure The Session</h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-burntOrange to-deepGold mx-auto"></div>
+                <p class="text-gray-400 text-sm">Initiate commercial bookings, global creative partnerships, and media press inquiries.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Info Cards Panel -->
+                <div class="space-y-4 lg:col-span-1">
+                    <div class="bg-cardBg p-6 rounded-xl border border-white/5 space-y-2">
+                        <h4 class="heading-font text-sm text-deepGold tracking-wide font-bold">Direct Corporate Mail</h4>
+                        <p class="text-white text-sm font-semibold">business@adeboiirecords.com</p>
+                    </div>
+                    <div class="bg-cardBg p-6 rounded-xl border border-white/5 space-y-2">
+                        <h4 class="heading-font text-sm text-burntOrange tracking-wide font-bold">Media / Press Line</h4>
+                        <p class="text-white text-sm font-semibold">media@adeboiirecords.com</p>
+                    </div>
+                    <!-- Direct Instant Chat Action -->
+                    <a href="https://wa.me/#" target="_blank" class="block bg-forestGreen hover:opacity-90 p-4 rounded-xl text-center font-bold text-sm text-white flex items-center justify-center space-x-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Chat via WhatsApp Inquiry</span>
+                    </a>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="bg-cardBg p-6 sm:p-8 rounded-xl border border-white/5 lg:col-span-2">
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-xs text-gray-400 uppercase tracking-wider">Your Full Name *</label>
+                                <input type="text" required class="w-full bg-matteBlack border border-white/10 rounded p-3 text-sm text-white focus:outline-none focus:border-deepGold transition-all">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs text-gray-400 uppercase tracking-wider">Email Address *</label>
+                                <input type="email" required class="w-full bg-matteBlack border border-white/10 rounded p-3 text-sm text-white focus:outline-none focus:border-deepGold transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-gray-400 uppercase tracking-wider">Inquiry Classification</label>
+                            <select class="w-full bg-matteBlack border border-white/10 rounded p-3 text-sm text-gray-400 focus:outline-none focus:border-deepGold transition-all">
+                                <option>Artist Live Event Booking</option>
+                                <option>Media Engagement / PR</option>
+                                <option>Strategic Brand Partnership</option>
+                                <option>Talent Demo Submission</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-gray-400 uppercase tracking-wider">Detailed Message Specification</label>
+                            <textarea rows="4" required class="w-full bg-matteBlack border border-white/10 rounded p-3 text-sm text-white focus:outline-none focus:border-deepGold transition-all" placeholder="Outline dates, budgets, routing requirements or links to your demo files..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded bg-gradient-to-r from-burntOrange to-deepGold text-matteBlack font-bold text-sm tracking-wider uppercase shadow-xl hover:opacity-95 transition-all">
+                            Transmit Inquiry Form
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CORE INTEGRATED NEWSLETTER BLOCK -->
+    <section class="border-t border-white/5 bg-black/60 py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <h3 class="heading-font text-2xl font-bold text-white tracking-wide">Join The Sound Movement Roster</h3>
+            <p class="text-xs text-gray-400 max-w-md mx-auto">Get exclusive first access to underground freestyle leaks, tour ticketing windows, and merchandise drops.</p>
+            <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row max-w-md mx-auto gap-2 pt-2">
+                <input type="email" placeholder="Enter your email address" required class="flex-grow bg-matteBlack border border-white/10 rounded px-4 py-3 text-xs text-white focus:outline-none focus:border-burntOrange">
+                <button type="submit" class="bg-ivoryWhite text-matteBlack hover:bg-white px-6 py-3 rounded text-xs uppercase font-bold tracking-wider whitespace-nowrap transition-all">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER ARCHITECTURE -->
+    <footer class="bg-matteBlack border-t border-white/10 px-4 lg:px-8 py-8 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <p class="heading-font text-lg font-bold text-white tracking-widest mb-1">ADEboII LABEL RECORD</p>
+                <p>© 2026 ADEboII Entertainment. Built From Culture. Made For The World.</p>
+            </div>
+            <!-- Global Social Outlets -->
+            <div class="flex space-x-6 text-base text-gray-400">
+                <a href="#" class="hover:text-deepGold transition-all"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-deepGold transition-all"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-deepGold transition-all"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-deepGold transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE ENGINE JAVASCRIPT -->
+    <script>
+        // DOM Mobile navigation selector handling
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // SPA Navigation Routing logic
+        function showPage(pageId) {
+            // Hide all structural pages
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active-section');
+            });
+
+            // Display target page element
+            const targetSection = document.getElementById(pageId + 'Page');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active-section');
+            }
+
+            // Close mobile drawer if triggered
+            mobileMenu.classList.add('hidden');
+
+            // Synchronize Navigation Visual Active indicators
+            updateNavHighlights(pageId);
+            
+            // Scroll to top layout smoothly on redirect
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateNavHighlights(pageId) {
+            // Desk Nav sync
+            const deskLinks = document.querySelectorAll('.nav-link');
+            deskLinks.forEach(link => {
+                if(link.getAttribute('onclick').includes(pageId)) {
+                    link.className = "nav-link text-deepGold border-b-2 border-deepGold pb-1 transition-all duration-200";
+                } else {
+                    link.className = "nav-link text-gray-400 hover:text-ivoryWhite pb-1 transition-all duration-200";
+                }
+            });
+
+            // Mobile menu context color updates
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileLinks.forEach(link => {
+                if(link.getAttribute('onclick').includes(pageId)) {
+                    link.className = "mobile-nav-link text-deepGold py-2";
+                } else {
+                    link.className = "mobile-nav-link text-gray-300 py-2";
+                }
+            });
+        }
+
+        // MVP Event Form Handler Submissions 
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("🔒 Form Transmitted Successfully! The ADEboII A&R management team has securely logged your parameters.");
+            event.target.reset();
+        }
+
+        function handleNewsletter(event) {
+            event.preventDefault();
+            alert("🔥 Connected! You have joined the global sound movement distribution list.");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
+                
